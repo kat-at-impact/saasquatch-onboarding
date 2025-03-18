@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="assets/saasquatch-icon-p.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css">
+    <title>SaaSquatch Onboarding</title>
+  </head>
+  <body>
+    <div class="layout">
+      <div>
+        <a href="https://docs.saasquatch.com/developer/squatchjs" target="_blank">
+          <img src="assets/saasquatch-icon.png" class="logo saasquatch" alt="SaaSquatch logo">
+        </a>
+        
+        <h1>SaaSquatch Onboarding</h1>
+        <nav>
+          <a href="index.html">Home</a> • 
+          <a href="widget.html">Widget</a> • 
+          <a href="landing.html">Landing</a> • 
+          <a href="event.html">Event</a> •
+          <a href="graphql.html">GraphQL Event</a>
+        </nav>
+    
+      </div>
+    </div>
+    <div class="layout">
+      <button id="mutate-button">Mutate!</button>
+      <br><br>
+      <img src="assets/dance-party-wonderpals.gif" alt="">
+    </div>
+    <script>!function(a,b){a("squatch","https://fast.ssqt.io/squatch-js@2",b)}(function(a,b,c){var d,e,f;c["_"+a]={},c[a]={},c[a].ready=function(b){c["_" + a].ready =  c["_" + a].ready || [];c["_" + a].ready.push(b);},e=document.createElement("script"),e.async=1,e.src=b,f=document.getElementsByTagName("script")[0],f.parentNode.insertBefore(e,f)},this);</script>
+    
+    <script>
+      const button = document.querySelector("#mutate-button");
+
+      const triggerLoyaltyEvent = (ev) => {
+        ev.preventDefault();
+        console.log('Mutate!');
+
+        const logUserEventQuery = 
+            `mutation{
+                logUserEvent(userEventInput:{
+                    userId:"loyaltyUser",
+                    accountId:"loyaltyUser",
+                    idempotencyKey:"81dbba4e-63cb-4941-8bba-c38cd202a25e",
+                    events: [
+                        {
+                            key: "customEvent"
+                        }
+                    ],
+                }){
+                    userId
+                    accountId
+                }
+            }`;
+
+        const options = {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Basic ${btoa('-u:TEST_74VC1keNjCkJrlCGJeiqoS17XWpfvK8E')}`,
+          },
+          body: JSON.stringify({
+            query: logUserEventQuery
+          })
+        };
+
+        fetch(`https://app.referralsaasquatch.com/api/v1/test_alw4wp0u6bkgb/graphql`, options)
+          .then(res => console.log(res.json()))
+      }
+
+
+      button.addEventListener("click", triggerLoyaltyEvent);
+    </script>
+  
+  </body>
+</html>
