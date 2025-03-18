@@ -30,28 +30,40 @@
           </div>
     </div>
     <div class="layout">
-      Triggering loyalty event
+      Trigger loyalty event
+      <br><br>
+      <button id="loyalty-button">❤️</button>
     </div>
     <script>!function(a,b){a("squatch","https://fast.ssqt.io/squatch-js@2",b)}(function(a,b,c){var d,e,f;c["_"+a]={},c[a]={},c[a].ready=function(b){c["_" + a].ready =  c["_" + a].ready || [];c["_" + a].ready.push(b);},e=document.createElement("script"),e.async=1,e.src=b,f=document.getElementsByTagName("script")[0],f.parentNode.insertBefore(e,f)},this);</script>
     <script>
       // Wait for squatch.js to be ready
       squatch.ready(function(){
-      
-          // Object containing the user & event object
-          var eventObj = {
-              "userId": "loyaltyUser",
-              "accountId": "loyaltyUser",
-              "events": [{
-              "key": "customEvent"
-              }]
-          };
-      
-          // If window.squatchToken is not set, pass in a jwt with .track(eventObj, { jwt }), otherwise include the {squatchToken}
-          squatch.events().track(eventObj, {squatchToken}).then(function(response) {
-          }).catch(function(error){
-          console.log(error);
-          })
+
+          const button = document.querySelector("#loyalty-button");
+          button.addEventListener("click", triggerLoyaltyEvent);
+
+          function triggerLoyaltyEvent() {
+            console.log('Loyalty!');
+
+            // Object containing the user & event object
+            var eventObj = {
+                "userId": "loyaltyUser",
+                "accountId": "loyaltyUser",
+                "events": [{
+                "key": "customEvent"
+                }]
+            };
+        
+            //If window.squatchToken is not set, pass in a jwt with .track(eventObj, { jwt }), otherwise include the {squatchToken}
+            squatch.events().track(eventObj, {squatchToken}).then(function(response) {
+            }).catch(function(error){
+            console.log(error);
+            })
+          }
+        
       });
+
+      
     </script>
   </body>
 </html>
