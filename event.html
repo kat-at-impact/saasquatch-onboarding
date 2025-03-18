@@ -9,7 +9,7 @@
   </head>
   <script> 
     window.squatchTenant = "test_alw4wp0u6bkgb";
-    window.squatchToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJsb3lhbHR5VXNlciIsImFjY291bnRJZCI6ImxveWFsdHlVc2VyIiwiZXZlbnRzIjpbeyJrZXkiOiJjdXN0b21FdmVudCJ9XX0.5QBBkj8ojrSuvBIQ_gqWi16ZffFUM_cmYHzAqJOrZr0";
+    window.squatchToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoibG95YWx0eVVzZXIiLCJhY2NvdW50SWQiOiJsb3lhbHR5VXNlciJ9fQ.FuDV2wQ_ORwPrMItFnEsncuGb4-0zCPF80ir0JeU5vU";
   </script> 
   <body>
     <div class="layout">
@@ -46,10 +46,10 @@
           };
       
           // If window.squatchToken is not set, pass in a jwt with .track(eventObj, { jwt }), otherwise include the {squatchToken}
-          // squatch.events().track(eventObj, {squatchToken}).then(function(response) {
-          // }).catch(function(error){
-          // console.log(error);
-          // })
+          squatch.events().track(eventObj, {squatchToken}).then(function(response) {
+          }).catch(function(error){
+          console.log(error);
+          })
       });
     </script>
   </body>
