@@ -20,7 +20,7 @@
           <a href="widget.html">Widget</a> • 
           <a href="landing.html">Landing</a> • 
           <a href="event.html">Event</a> •
-          <a href="graphql.html">GraphQL Event</a>
+          <a href="graphql.html">GraphQL</a>
         </nav>
     
       </div>
@@ -44,7 +44,7 @@
                 logUserEvent(userEventInput:{
                     userId:"loyaltyUser",
                     accountId:"loyaltyUser",
-                    idempotencyKey:"81dbba4e-63cb-4941-8bba-c38cd202a25e",
+                    idempotencyKey:"81dbba4e-77cb-4941-8bba-c38cd202a25e",
                     events: [
                         {
                             key: "customEvent"
@@ -53,6 +53,14 @@
                 }){
                     userId
                     accountId
+                    events {
+                        id
+                        userId
+                        key
+                        dateTriggered
+                        dateReceived
+                        dateProcessed
+                    }
                 }
             }`;
 
@@ -60,7 +68,7 @@
           method: "post",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Basic ${btoa('-u:TEST_74VC1keNjCkJrlCGJeiqoS17XWpfvK8E')}`,
+            "Authorization": `Basic LXU6VEVTVF83NFZDMWtlTmpDa0pybENHSmVpcW9TMTdYV3Bmdks4RQ==`,
           },
           body: JSON.stringify({
             query: logUserEventQuery
