@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../src/style.css">
     <title>Impact Onboarding</title>
     <script> 
-      window.impactToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IklSakRUc3BneDVXWDYxMjk4MzFCeGRWSm9MNnJZNjU1MzUifQ.eyJ1c2VyIjp7ImlkIjoia2F0LmhlYmVydC1zY2htaWR0K3JlZmVycmVyQGltcGFjdC5jb20iLCJhY2NvdW50SWQiOiJrYXQuaGViZXJ0LXNjaG1pZHQrcmVmZXJyZXJAaW1wYWN0LmNvbSIsImVtYWlsIjoia2F0LmhlYmVydC1zY2htaWR0K3JlZmVycmVyQGltcGFjdC5jb20ifX0.as7C5cJWPjIzOrZQRvKoUUraYJqITQrmLBK03lXJGvk";
+      //window.impactToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IklSakRUc3BneDVXWDYxMjk4MzFCeGRWSm9MNnJZNjU1MzUifQ.eyJ1c2VyIjp7ImlkIjoia2F0LmhlYmVydC1zY2htaWR0K3JlZmVycmVyQGltcGFjdC5jb20iLCJhY2NvdW50SWQiOiJrYXQuaGViZXJ0LXNjaG1pZHQrcmVmZXJyZXJAaW1wYWN0LmNvbSIsImVtYWlsIjoia2F0LmhlYmVydC1zY2htaWR0K3JlZmVycmVyQGltcGFjdC5jb20ifX0.as7C5cJWPjIzOrZQRvKoUUraYJqITQrmLBK03lXJGvk";
     </script> 
   </head>
   <body>
@@ -20,8 +20,7 @@
         <h1>Impact Onboarding</h1>
         <nav>
           <a href="index.html">Home</a> • 
-          <a href="register.html">Register</a> •
-          <a href="widget.html">Widget</a>
+          <a href="register.html">Register</a>
         </nav>
     
       </div>
@@ -32,6 +31,7 @@
       <button id="loyalty-button">Register ✍️</button>
       <br><br>
       <details>
+        Referrer User<br>
         kat.hebert-schmidt+referrer@impact.com
       </details>
       
@@ -50,11 +50,13 @@
 
           const userConfig = {
               user: {                               
-              id: 'kat.hebert-schmidt+referrer@impact.com',                      
-              accountId: 'kat.hebert-schmidt+referrer@impact.com',       
-              email: 'kat.hebert-schmidt+referrer@impact.com',               
+                id: 'kat.hebert-schmidt+referrer@impact.com',                      
+                accountId: 'kat.hebert-schmidt+referrer@impact.com',       
+                email: 'kat.hebert-schmidt+referrer@impact.com',
+                firstName: 'Referrer',
+                lastName: 'User' 
               },
-              //jwt:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFiY18xMjMiLCJhY2NvdW50SWQiOiJhYmNfMTIzIiwiZW1haWwiOiJqb2huQGV4YW1wbGUuY29tIn0.oDqQ5jAmNsQeLElpFz-i6iGHWMBJdfDMY0_7UWtAEzQ'
+              jwt:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoia2F0LmhlYmVydC1zY2htaWR0K3JlZmVycmVyQGltcGFjdC5jb20iLCJhY2NvdW50SWQiOiJrYXQuaGViZXJ0LXNjaG1pZHQrcmVmZXJyZXJAaW1wYWN0LmNvbSIsImVtYWlsIjoia2F0LmhlYmVydC1zY2htaWR0K3JlZmVycmVyQGltcGFjdC5jb20iLCJmaXJzdE5hbWUiOiJSZWZlcnJlciIsImxhc3ROYW1lIjoiVXNlciJ9fQ.XbVVv1ucaiEpIPiltgre3nnWotGcUgnTZb7_TING-mU'
           };
       
           impact.api().upsertUser(userConfig).then(function(response) {
