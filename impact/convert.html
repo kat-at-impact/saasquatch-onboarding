@@ -49,18 +49,19 @@
 
         function trackConversion() {
           console.log('Convert referral!');
-          const eventId = "55188";
+          const eventId = 55188;
 
           ire('trackConversion', eventId, {
             customerId: "kat.hebert-schmidt+referred@impact.com",
             customerEmail: 'kat.hebert-schmidt+referred@impact.com',
-            programId: "33255",
+            campaignId: "33255",
             eventDate: "NOW",
-            orderId: 1234567
-        },
-        {
-            verifySiteDefinitionMatch:true
-        }
+            orderId: 1234567,
+            
+          },
+          {
+              verifySiteDefinitionMatch: true
+          }
         );
         }
       };
