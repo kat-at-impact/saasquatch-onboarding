@@ -4,69 +4,86 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="../assets/saasquatch-icon-p.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../src/style.css">
-    <title>Impact Onboarding</title>
-    <script> 
-      window.impactToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IklSakRUc3BneDVXWDYxMjk4MzFCeGRWSm9MNnJZNjU1MzUifQ.eyJ1c2VyIjp7ImlkIjoia2F0LmhlYmVydC1zY2htaWR0K3JlZmVycmVkQGltcGFjdC5jb20iLCJhY2NvdW50SWQiOiJrYXQuaGViZXJ0LXNjaG1pZHQrcmVmZXJyZWRAaW1wYWN0LmNvbSIsImVtYWlsIjoia2F0LmhlYmVydC1zY2htaWR0K3JlZmVycmVkQGltcGFjdC5jb20iLCJmaXJzdE5hbWUiOiJSZWZlcnJlZCIsImxhc3ROYW1lIjoiVXNlciJ9fQ.mo1mKvI7zs76Za9DrWBSw7cO6uL0rKFDrsCojm_HuJc";
-    </script>     
+    <link rel="stylesheet" href="../src/style.css" />
+    <title>Advocate Test</title>
+    <script>
+      window.impactToken =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IklSakRUc3BneDVXWDYxMjk4MzFCeGRWSm9MNnJZNjU1MzUifQ.eyJ1c2VyIjp7ImlkIjoia2F0LmhlYmVydC1zY2htaWR0K2NvZGVAaW1wYWN0LmNvbSIsImFjY291bnRJZCI6ImthdC5oZWJlcnQtc2NobWlkdCtjb2RlQGltcGFjdC5jb20iLCJlbWFpbCI6ImthdC5oZWJlcnQtc2NobWlkdCtjb2RlQGltcGFjdC5jb20iLCJmaXJzdE5hbWUiOiJHaW5hIiwibGFzdE5hbWUiOiJDb2RpbmkifX0.ugN8KzeCbkgZCYv4uB2Xycyk-pJgEZCmMieIArSJUzY";
+    </script>
   </head>
   <body>
     <div class="layout">
       <div>
         <a href="https://docs.saasquatch.com/developer/squatchjs" target="_blank">
-          <img src="../assets/impact-icon.svg" class="logo impact" alt="Impact logo">
+          <img src="../assets/impact-icon.svg" class="logo impact" alt="Impact logo" />
         </a>
-        
-        <h1>Impact Onboarding</h1>
+
         <nav>
-          <a href="index.html">Home</a> • 
-          <a href="widget.html">Widget</a> • 
-          <a href="friend.html">Friend Widget</a> • 
+          <a href="index.html">Home</a> • <a href="widget.html">Widget</a> • <a href="friend.html">Friend Widget</a> •
           <a href="register.html">Register</a> •
           <a href="convert.html">Track Conversion</a>
         </nav>
-    
       </div>
     </div>
     <div class="layout">
       Register referred user:
-      <br><br>
+      <br /><br />
       <button id="loyalty-button">Register ✍️</button>
-      <br><br>
+      <br /><br />
       <details>
-        Referred User<br>
-        kat.hebert-schmidt+referred@impact.com
+        Gina Codini<br />
+        kat.hebert-schmidt+code@impact.com
       </details>
-      
     </div>
     <script>
-        (function(a,b,c,d,e,f,g){e['ire_o']=c;e[c]=e[c]||function(){(e[c].a=e[c].a||[]).push(arguments)};f=d.createElement(b);g=d.getElementsByTagName(b)[0];f.async=1;f.src=a;g.parentNode.insertBefore(f,g);})('https://utt.impactcdn.com/A6129831-e319-4315-aa32-24037c5e79a065535.js','script','ire',document,window); ire('identify', {customerid: '' /*INSERT CUSTOMER ID*/, customeremail: '' /*INSERT SHA1 HASHED CUSTOMER EMAIL*/}); 
+      (function (a, b, c, d, e, f, g) {
+        e["ire_o"] = c;
+        e[c] =
+          e[c] ||
+          function () {
+            (e[c].a = e[c].a || []).push(arguments);
+          };
+        f = d.createElement(b);
+        g = d.getElementsByTagName(b)[0];
+        f.async = 1;
+        f.src = a;
+        g.parentNode.insertBefore(f, g);
+      })("https://utt.impactcdn.com/A6129831-e319-4315-aa32-24037c5e79a065535.js", "script", "ire", document, window);
+      ire("identify", {
+        customerid: "" /*INSERT CUSTOMER ID*/,
+        customeremail: "" /*INSERT SHA1 HASHED CUSTOMER EMAIL*/,
+      });
     </script>
     <script>
-      window.impactOnReady = function(){
-
+      window.impactOnReady = function () {
         const button = document.querySelector("#loyalty-button");
         button.addEventListener("click", registerParticipant);
 
         function registerParticipant() {
-          console.log('Register participant!');
+          console.log("Register participant!");
 
           const userConfig = {
-              user: {                               
-                id: 'kat.hebert-schmidt+referred@impact.com',                      
-                accountId: 'kat.hebert-schmidt+referred@impact.com',       
-                email: 'kat.hebert-schmidt+referred@impact.com',
-                firstName: 'Referred',
-                lastName: 'User' 
-              },
-              //jwt:'xxx'
+            user: {
+              id: "kat.hebert-schmidt+code@impact.com",
+              accountId: "kat.hebert-schmidt+code@impact.com",
+              email: "kat.hebert-schmidt+code@impact.com",
+              firstName: "Gina",
+              lastName: "Codini",
+            },
+            //jwt:'xxx'
           };
-      
-          impact.api().upsertUser(userConfig).then(function(response) {
+
+          impact
+            .api()
+            .upsertUser(userConfig)
+            .then(function (response) {
               const user = response.user;
-          }).catch(function(error){
+              console.log(response);
+              console.log(user);
+            })
+            .catch(function (error) {
               console.log(error);
-          });
+            });
         }
       };
     </script>
