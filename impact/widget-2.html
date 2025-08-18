@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="../assets/saasquatch-icon-p.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/style.css" />
+    <title>Advocate Test</title>
+    <script>
+      //window.impactToken =
+      //  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IklSakRUc3BneDVXWDYxMjk4MzFCeGRWSm9MNnJZNjU1MzUifQ.eyJ1c2VyIjp7ImlkIjoia2F0LmhlYmVydC1zY2htaWR0K3JlZmVycmVyQGltcGFjdC5jb20iLCJhY2NvdW50SWQiOiJrYXQuaGViZXJ0LXNjaG1pZHQrcmVmZXJyZXJAaW1wYWN0LmNvbSIsImVtYWlsIjoia2F0LmhlYmVydC1zY2htaWR0K3JlZmVycmVyQGltcGFjdC5jb20iLCJmaXJzdE5hbWUiOiJSZWZlcnJlciIsImxhc3ROYW1lIjoiVXNlciJ9fQ.STNicmlwKnwB5oyoY1ljHzVOUMQUwUEFLbATzcLDkS0";
+      window.impactToken = "";
+      var tokenValue =
+        "eyJraWQiOiJJUlNKaW5yM1Z5dXIyMjE0NDg0cEhoVm5wQ3N2ZmhaZ2cxIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJleHAiOjE3NTU2MzU4ODQsInVzZXIiOnsiYWNjb3VudElkIjoiQzA3QkEzN0RDRERCMDc5N0RFM0RBQjUxNEYwMUYxOUIzMzFCQzFBM0JBQTYzQ0NCNTU5Q0RENUQ1RUMwQ0NGOSIsImZpcnN0TmFtZSI6InJhaHVsIiwibGFzdE5hbWUiOiJwIiwicmVmZXJhYmxlIjp0cnVlLCJjb3VudHJ5Q29kZSI6IkdCIiwiY3VzdG9tRmllbGRzIjp7IlVzZXJLZXkiOjE1NzkwNzU2OTgsIlBsYW5UeXBlIjoiUGVyc29uYWwiLCJFbnZpcm9ubWVudCI6IlFBIiwiQWNjb3VudEtleSI6MTg3NzI0OTk3Nn0sImlkIjoiQzA3QkEzN0RDRERCMDc5N0RFM0RBQjUxNEYwMUYxOUIzMzFCQzFBM0JBQTYzQ0NCNTU5Q0RENUQ1RUMwQ0NGOSIsImxvY2FsZSI6ImVuX1VTIiwiZW1haWwiOiJyYWh1bHAtYWR2b2NhdGUxM2F1ZzAxQGplZGl4LmNvbSJ9fQ.9-FkOHpZWc6841a_XLD2XNDJGRQw2SYCwfkiJJkGhR8";
+
+      setTimeout(function () {
+        console.log("setting impactToken");
+        window.impactToken = tokenValue;
+        console.log(window.impactToken);
+      }, 5000);
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <div>
+        <a href="https://docs.saasquatch.com/developer/squatchjs" target="_blank">
+          <img src="../assets/impact-icon.svg" class="logo impact" alt="Impact logo" />
+        </a>
+
+        <nav>
+          <a href="index.html">Home</a> • <a href="widget.html">Widget</a> • <a href="friend.html">Friend Widget</a> •
+          <a href="register.html">Register</a> •
+          <a href="convert.html">Track Conversion</a>
+        </nav>
+      </div>
+    </div>
+    <div class="layout">
+      <impact-embed widget="p/33255/w/referrerWidget"><div>Loading...</div></impact-embed>
+    </div>
+    <script>
+      (function (a, b, c, d, e, f, g) {
+        e["ire_o"] = c;
+        e[c] =
+          e[c] ||
+          function () {
+            (e[c].a = e[c].a || []).push(arguments);
+          };
+        f = d.createElement(b);
+        g = d.getElementsByTagName(b)[0];
+        f.async = 1;
+        f.src = a;
+        g.parentNode.insertBefore(f, g);
+      })("https://utt.impactcdn.com/A2214484-a230-453c-9af7-7f267f4a2dce1.js", "script", "ire", document, window);
+    </script>
+  </body>
+</html>
